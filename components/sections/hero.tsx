@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/config/site.config";
 import type { HeroData } from "@/lib/types/config";
 
 interface HeroProps {
@@ -43,42 +45,61 @@ function HeroMinimal({ data }: { data: HeroData }) {
 
 function HeroSplit({ data }: { data: HeroData }) {
   return (
-    <section className="relative overflow-hidden bg-mesh py-20 md:py-28 lg:py-32">
-      {/* Subtle dot overlay */}
-      <div className="absolute inset-0 bg-dots opacity-50" />
+    <section className="relative overflow-hidden py-16 md:py-24 lg:py-28">
+      {/* Subtle mesh background */}
+      <div className="absolute inset-0 bg-mesh opacity-60" />
       
       <Container className="relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-xl">
-            <h1 className="mb-6 text-balance">{data.heading}</h1>
+            {/* Location badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm">
+              <MapPin className="h-3.5 w-3.5 text-primary" />
+              <span>{siteConfig.contact.address?.city}, {siteConfig.contact.address?.state}</span>
+              <span className="mx-1 text-border">·</span>
+              <span>Since 2008</span>
+            </div>
+            
+            <h1 className="mb-5 text-balance">{data.heading}</h1>
             {data.subheading && (
-              <p className="mb-10 text-lg text-muted-foreground md:text-xl text-balance leading-relaxed">
+              <p className="mb-8 text-lg text-muted-foreground text-balance leading-relaxed">
                 {data.subheading}
               </p>
             )}
+            
             {data.cta && (
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
                   <Link href={data.cta.href}>{data.cta.text}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/services">Our Services</Link>
+                  <Link href="/services">View Services</Link>
                 </Button>
               </div>
             )}
+            
+            {/* Hours pill */}
+            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4" />
+              <span className="font-medium">Hours</span>
+              <span>{siteConfig.contact.hours}</span>
+            </div>
           </div>
+          
           {data.image && (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl shadow-primary/10">
-              <Image
-                src={data.image}
-                alt={data.heading}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-              {/* Subtle overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+            <div className="relative">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl shadow-primary/10">
+                <Image
+                  src={data.image}
+                  alt={data.heading}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl bg-primary/10" />
             </div>
           )}
         </div>

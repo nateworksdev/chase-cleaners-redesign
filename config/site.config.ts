@@ -1,43 +1,42 @@
 import { SiteConfig } from "@/lib/types/config";
 
 /**
- * Site configuration
- * Edit this file to customize the site for each client
+ * Chase Cleaners & Tailor - Site Configuration
+ * Mount Kisco, NY — Since 2008
  */
 
 export const siteConfig: SiteConfig = {
   meta: {
-    siteName: "Blue Ridge Tree Care",
-    tagline: "Expert Tree Service Since 1995",
+    siteName: "Chase Cleaners & Tailor",
+    tagline: "Expert Care for Your Garments",
     description:
-      "Professional tree care services including trimming, removal, stump grinding, and emergency storm cleanup. Serving the greater metro area with certified arborists.",
-    url: "https://example.com",
+      "Professional alterations, tailoring, and dry cleaning in Mount Kisco, NY. Walk-ins welcome. Serving the community since 2008 with precision, fair pricing, and quick turnaround.",
+    url: "https://chase-cleaners-redesign.vercel.app",
   },
 
   brand: {
     colors: {
-      primary: "#2d5016", // forest green
-      secondary: "#8b4513", // saddle brown
-      accent: "#f4a460", // sandy brown
+      primary: "#6B8E7B", // sage green
+      secondary: "#F5F3EF", // warm cream
+      accent: "#D4C5A9", // soft gold
     },
   },
 
   contact: {
-    phone: "(555) 123-4567",
-    email: "info@blueridgetreecare.com",
+    phone: "(914) 966-9678",
+    email: "info@chasecleaners.com",
     address: {
-      street: "123 Oak Street",
-      city: "Springfield",
-      state: "MA",
-      zip: "01101",
+      street: "231 East Main Street",
+      city: "Mount Kisco",
+      state: "NY",
+      zip: "10549",
     },
-    hours: "Mon-Sat: 7am-6pm",
-    serviceArea: "Springfield & surrounding 25 miles",
+    hours: "Mon–Fri 8am–6pm, Sat 9am–4pm",
+    serviceArea: "Mount Kisco & surrounding areas",
   },
 
   social: {
-    facebook: "https://facebook.com/blueridgetree",
-    instagram: "https://instagram.com/blueridgetree",
+    google: "https://g.page/chase-cleaners",
   },
 
   pages: {
@@ -45,68 +44,70 @@ export const siteConfig: SiteConfig = {
       sections: [
         {
           type: "hero",
-          variant: "fullscreen",
+          variant: "split",
           data: {
-            heading: "Professional Tree Care You Can Trust",
+            heading: "Expert Care for Your Garments",
             subheading:
-              "Certified arborists serving your community for over 25 years",
+              "Professional alterations, tailoring, and dry cleaning from a team that takes the time to get it right. Walk in anytime.",
             cta: {
-              text: "Get Free Estimate",
+              text: "Visit Our Shop",
               href: "/contact",
             },
-            image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&h=900&fit=crop",
+            image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop",
+          },
+        },
+        {
+          type: "process",
+          data: {
+            heading: "Why Choose Us",
+            steps: [
+              {
+                title: "16+ Years Local",
+                description: "Serving Mount Kisco since 2008 with dedication and care.",
+                icon: "map-pin",
+              },
+              {
+                title: "Same-Day Service",
+                description: "When you need it fast, we make it happen.",
+                icon: "clock",
+              },
+              {
+                title: "Expert Tailors",
+                description: "Skilled craftsmanship in every stitch.",
+                icon: "scissors",
+              },
+              {
+                title: "Fair Pricing",
+                description: "Honest quotes, no surprises—ever.",
+                icon: "badge-check",
+              },
+            ],
           },
         },
         {
           type: "services",
           variant: "grid",
           data: {
-            heading: "Our Services",
-            subheading: "Complete tree care solutions for residential and commercial properties",
+            heading: "What We Do",
+            subheading: "From quick repairs to custom tailoring, we handle garments with the care they deserve.",
             showAll: false,
-          },
-        },
-        {
-          type: "instant-estimator",
-          data: {
-            heading: "Get an Instant Estimate",
-            subheading: "Adjust the sliders to see your estimated price range. No commitment, no pressure.",
           },
         },
         {
           type: "image-band",
           data: {
-            image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1600&h=600&fit=crop",
-            heading: "Trusted by Homeowners Since 1995",
-            subheading: "Over 10,000 trees cared for across the region",
+            image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1600&h=600&fit=crop",
+            heading: "Trusted With Your Most Delicate Garments",
+            subheading: "Wedding gowns, suits, leather, silk, cashmere—we handle it all with expert care.",
             height: "md",
             overlay: "gradient",
           },
         },
         {
-          type: "process",
+          type: "instant-estimator",
           data: {
-            heading: "How We Work",
-            steps: [
-              {
-                title: "Free Consultation",
-                description:
-                  "We assess your trees and provide a detailed estimate at no cost.",
-                icon: "clipboard-list",
-              },
-              {
-                title: "Expert Service",
-                description:
-                  "Our certified arborists handle your job safely and efficiently.",
-                icon: "wrench",
-              },
-              {
-                title: "Complete Cleanup",
-                description:
-                  "We remove all debris and leave your property spotless.",
-                icon: "broom",
-              },
-            ],
+            heading: "Get a Quick Estimate",
+            subheading: "Select your service and garment to see our price range. No commitment, no pressure.",
           },
         },
         {
@@ -116,22 +117,22 @@ export const siteConfig: SiteConfig = {
             heading: "What Our Customers Say",
             reviews: [
               {
-                text: "They removed three large oaks from my backyard quickly and professionally. The crew was courteous and cleaned up everything perfectly.",
+                text: "They altered my wedding dress perfectly. The attention to detail was incredible—couldn't have asked for better.",
                 author: "Sarah M.",
                 rating: 5,
                 source: "google",
               },
               {
-                text: "Best tree service in the area. Fair pricing, excellent work, and they really know their stuff. Highly recommend!",
-                author: "Mike T.",
+                text: "I've been coming here for years. Fast, reliable, and they always remember my preferences.",
+                author: "Michael T.",
                 rating: 5,
-                source: "yelp",
+                source: "google",
               },
               {
-                text: "Called them for emergency storm damage and they were out within 2 hours. Professional and efficient.",
-                author: "Jennifer L.",
+                text: "Finally found a tailor I can trust with my suits. Fair prices and excellent work every time.",
+                author: "James L.",
                 rating: 5,
-                source: "facebook",
+                source: "google",
               },
             ],
           },
@@ -139,131 +140,100 @@ export const siteConfig: SiteConfig = {
         {
           type: "cta",
           data: {
-            heading: "Ready to Get Started?",
-            subheading: "Contact us today for a free, no-obligation estimate",
-            buttonText: "Request Quote",
+            heading: "Stop By Anytime",
+            subheading: "We're on East Main Street in Mount Kisco. Walk-ins always welcome—no appointment needed.",
+            buttonText: "Get Directions",
             buttonHref: "/contact",
           },
         },
       ],
     },
     services: {
-      heading: "Our Services",
-      subheading: "Professional tree care for every need",
+      heading: "Services & Pricing",
+      subheading: "Fair, upfront pricing. We'll give you an exact quote when we see your garment—no surprises.",
     },
     about: {
-      heading: "About Blue Ridge Tree Care",
+      heading: "A Neighborhood Shop That Still Does Things Right",
       story:
-        "Founded in 1995, Blue Ridge Tree Care has been serving the Springfield community for over 25 years. Our team of certified arborists combines decades of experience with modern equipment and techniques to provide the highest quality tree care services. We're family-owned and operated, and we treat every property as if it were our own.",
-      team: [
-        {
-          name: "John Anderson",
-          role: "Owner & Certified Arborist",
-          bio: "30+ years experience, ISA Certified",
-        },
-        {
-          name: "Maria Rodriguez",
-          role: "Operations Manager",
-          bio: "15 years in tree care industry",
-        },
-      ],
+        "When we opened in 2008, Mount Kisco already had places to get clothes cleaned. But we saw an opportunity to do something different: focus on the tailoring side of things, treat every garment with care, and build a shop where people felt comfortable walking in with questions.\n\nThat approach hasn't changed. We're still a small operation—small enough that we know many of our customers by name, and small enough to take pride in every piece of work that leaves here.\n\nGood tailoring is about more than measurements. It's about listening to what people actually need, being honest about what's possible, and doing work that holds up over time.",
       certifications: [
-        "ISA Certified Arborists",
-        "Licensed & Insured",
-        "OSHA Compliant",
+        "Precision in every stitch",
+        "Honest, fair pricing",
+        "Quick when you need it",
       ],
     },
     contact: {
-      heading: "Get In Touch",
-      subheading: "Request a free estimate or ask us a question",
+      heading: "Visit Us",
+      subheading: "We're on East Main Street in the heart of Mount Kisco. Walk-ins are always welcome—no appointment needed.",
     },
   },
 
   services: [
     {
-      id: "tree-trimming",
-      name: "Tree Trimming & Pruning",
-      slug: "tree-trimming",
-      description:
-        "Expert trimming to keep your trees healthy, safe, and beautiful",
-      longDescription:
-        "Regular trimming and pruning is essential for tree health and safety. Our certified arborists use proper techniques to remove dead or diseased branches, improve tree structure, and enhance appearance while promoting healthy growth.",
+      id: "alterations",
+      name: "Tailoring & Alterations",
+      slug: "alterations",
+      description: "Expert alterations from simple hems to complex tailoring. Most completed within 3–5 business days.",
+      longDescription: "Whether you need pants hemmed, a jacket taken in, or a complete garment transformation, our skilled tailors deliver precise, lasting results. We take the time to understand exactly what you need and get the fit right—the first time.",
       featured: true,
       icon: "scissors",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop",
-      pricing: {
-        type: "quote",
-      },
+      image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&h=600&fit=crop",
+      pricing: { type: "starting", value: 12 },
     },
     {
-      id: "tree-removal",
-      name: "Tree Removal",
-      slug: "tree-removal",
-      description:
-        "Safe removal of dangerous, diseased, or unwanted trees",
-      longDescription:
-        "When a tree becomes hazardous or needs to be removed, we handle it safely and efficiently. We use specialized equipment and techniques to remove trees of any size without damaging your property.",
+      id: "dry-cleaning",
+      name: "Dry Cleaning",
+      slug: "dry-cleaning",
+      description: "Professional dry cleaning with 2–3 business day turnaround. Shirts, suits, dresses, and more.",
+      longDescription: "Our dry cleaning process is gentle yet thorough, preserving your garments while removing stains and odors. We inspect every item and treat spots individually for the best results.",
       featured: true,
-      icon: "tree-pine",
-      image: "https://images.unsplash.com/photo-1473445730015-841f29a9490b?w=800&h=600&fit=crop",
-      pricing: {
-        type: "quote",
-      },
+      icon: "sparkles",
+      image: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=800&h=600&fit=crop",
+      pricing: { type: "starting", value: 4.5 },
     },
     {
-      id: "stump-grinding",
-      name: "Stump Grinding",
-      slug: "stump-grinding",
-      description: "Complete stump removal and grinding services",
-      longDescription:
-        "Stumps are unsightly and can be hazardous. Our professional stump grinding service removes stumps below ground level, allowing you to replant or reclaim your space.",
+      id: "wedding-gowns",
+      name: "Wedding Gown Services",
+      slug: "wedding-gowns",
+      description: "Delicate alterations and preservation for your most important dress.",
+      longDescription: "Your wedding gown deserves special attention. We offer expert alterations to ensure a perfect fit, plus professional cleaning and preservation to keep your dress beautiful for years to come.",
       featured: true,
-      icon: "circle-slash",
-      image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&h=600&fit=crop",
-      pricing: {
-        type: "starting",
-        value: 150,
-      },
+      icon: "heart",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
+      pricing: { type: "starting", value: 150 },
     },
     {
-      id: "emergency-removal",
-      name: "Emergency Tree Removal",
-      slug: "emergency-removal",
-      description: "24/7 emergency service for storm damage and fallen trees",
-      longDescription:
-        "Storms don't wait, and neither do we. Our emergency tree removal service is available 24/7 to handle fallen trees, hanging branches, and other urgent situations quickly and safely.",
+      id: "suits-tuxedos",
+      name: "Suits & Tuxedos",
+      slug: "suits-tuxedos",
+      description: "Professional pressing, tailoring, and care for men's formal wear.",
+      longDescription: "From minor adjustments to complete tailoring, we make sure your suits and tuxedos fit perfectly and look their best. We handle everything from lapel adjustments to complete restyling.",
       featured: true,
-      icon: "siren",
-      image: "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=800&h=600&fit=crop",
-      pricing: {
-        type: "quote",
-      },
+      icon: "briefcase",
+      image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&h=600&fit=crop",
+      pricing: { type: "starting", value: 18 },
     },
     {
-      id: "land-clearing",
-      name: "Land Clearing",
-      slug: "land-clearing",
-      description: "Lot clearing for construction and development",
-      longDescription:
-        "Preparing land for construction or development requires proper tree and brush removal. We provide complete land clearing services with minimal environmental impact.",
-      icon: "tractor",
-      image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&h=600&fit=crop",
-      pricing: {
-        type: "quote",
-      },
+      id: "leather-suede",
+      name: "Leather & Suede",
+      slug: "leather-suede",
+      description: "Specialized cleaning and conditioning for leather and suede garments.",
+      longDescription: "Leather and suede require special care. Our cleaning process removes dirt and stains while conditioning the material to keep it soft and supple.",
+      featured: false,
+      icon: "layers",
+      image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&h=600&fit=crop",
+      pricing: { type: "starting", value: 45 },
     },
     {
-      id: "tree-health",
-      name: "Tree Health Care",
-      slug: "tree-health",
-      description: "Disease diagnosis, treatment, and prevention",
-      longDescription:
-        "Keep your trees healthy with our comprehensive tree health care services. We diagnose diseases, treat pest infestations, and provide preventative care to protect your investment.",
-      icon: "heart-pulse",
-      image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop",
-      pricing: {
-        type: "quote",
-      },
+      id: "household",
+      name: "Household Items",
+      slug: "household",
+      description: "Drapes, linens, comforters, and more. Call for a custom quote.",
+      longDescription: "We clean and care for household textiles including drapes, curtains, bedding, tablecloths, and more. Each item is assessed individually to determine the best cleaning approach.",
+      featured: false,
+      icon: "home",
+      image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
+      pricing: { type: "quote" },
     },
   ],
 };
