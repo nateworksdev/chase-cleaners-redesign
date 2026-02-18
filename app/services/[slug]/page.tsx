@@ -2,10 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import * as LucideIcons from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { Section } from "@/components/ui/section";
 import { ServiceEstimator } from "@/components/service-estimator";
 import { siteConfig } from "@/config/site.config";
 
@@ -55,8 +57,9 @@ export default async function ServiceDetailPage({
     <>
       <Nav />
       <main id="main-content">
+        {/* Hero Image */}
         {service.image && (
-          <section className="relative h-[40vh] overflow-hidden">
+          <section className="relative h-[35vh] min-h-[280px] overflow-hidden">
             <Image
               src={service.image}
               alt={service.name}
@@ -65,112 +68,161 @@ export default async function ServiceDetailPage({
               sizes="100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
           </section>
         )}
 
-        <section className="py-16 md:py-20">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-[1fr,380px]">
-              {/* Main Content */}
-              <div>
+        {/* Main Content */}
+        <Section padding="lg">
+          <div className="grid gap-10 lg:grid-cols-[1fr,360px] lg:gap-14">
+            {/* Service Details */}
+            <div>
+              <div className="flex items-start gap-4 mb-6">
                 {Icon && (
-                  <div className="mb-6 inline-flex rounded-xl bg-primary/10 p-4 text-primary">
-                    <Icon className="h-8 w-8" />
+                  <div className="rounded-xl bg-primary/10 p-3 text-primary">
+                    <Icon className="h-7 w-7" />
                   </div>
                 )}
-                <h1 className="mb-4 text-balance">{service.name}</h1>
-                <p className="mb-8 text-xl text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-
-                {service.longDescription && (
-                  <div className="prose prose-neutral dark:prose-invert mb-8 max-w-none">
-                    <p className="leading-relaxed">{service.longDescription}</p>
-                  </div>
-                )}
-
-                {service.pricing && (
-                  <div className="mb-8 rounded-xl border bg-muted/30 p-6">
-                    <h3 className="mb-2 text-lg font-semibold">Pricing</h3>
-                    <p className="text-muted-foreground">
+                <div>
+                  <h1 className="text-3xl sm:text-4xl">{service.name}</h1>
+                  {service.pricing && (
+                    <p className="mt-1 text-lg font-medium text-primary">
                       {service.pricing.type === "starting" &&
-                        `Starting at $${service.pricing.value}`}
+                        `From $${service.pricing.value}`}
                       {service.pricing.type === "fixed" &&
                         `$${service.pricing.value}`}
-                      {service.pricing.type === "quote" &&
-                        "Contact us for a custom quote"}
+                      {service.pricing.type === "quote" && "Quote on inspection"}
                     </p>
-                  </div>
-                )}
-
-                <div className="flex flex-col gap-4 sm:flex-row lg:hidden">
-                  <Button asChild size="lg">
-                    <Link href="/contact">Get Free Estimate</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a href={`tel:${siteConfig.contact.phone.replace(/\D/g, "")}`}>
-                      Call {siteConfig.contact.phone}
-                    </a>
-                  </Button>
+                  )}
                 </div>
               </div>
 
-              {/* Estimator Sidebar */}
-              <div className="lg:sticky lg:top-24 lg:self-start">
-                <ServiceEstimator
-                  serviceId={service.id}
-                  serviceName={service.name}
-                  basePriceRange={
-                    service.pricing?.type === "starting" && service.pricing.value
-                      ? { min: service.pricing.value, max: service.pricing.value * 2.5 }
-                      : service.pricing?.type === "quote"
-                      ? { min: 200, max: 2000 }
-                      : undefined
-                  }
-                />
+              <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
+
+              {service.longDescription && (
+                <div className="mb-8 text-muted-foreground leading-relaxed">
+                  <p>{service.longDescription}</p>
+                </div>
+              )}
+
+              {/* Mobile CTA */}
+              <div className="flex flex-col gap-3 sm:flex-row lg:hidden mb-8">
+                <Button asChild size="lg" className="flex-1">
+                  <Link href="/contact">
+                    Visit Our Shop
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="flex-1">
+                  <a href={`tel:${siteConfig.contact.phone.replace(/\D/g, "")}`}>
+                    <Phone className="mr-2 h-4 w-4" />
+                    Call Us
+                  </a>
+                </Button>
+              </div>
+
+              {/* Info Box */}
+              <div className="rounded-xl border bg-surface p-6">
+                <h3 className="mb-4 font-semibold">What to Expect</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Bring your garment in for a free assessment
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    We&apos;ll give you an exact quote on the spot
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Standard turnaround is 3-5 business days
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    Rush service available when you need it fast
+                  </li>
+                </ul>
               </div>
             </div>
-          </Container>
-        </section>
 
-        <section className="bg-muted/30 py-16 md:py-20">
-          <Container>
-            <h2 className="mb-10 text-center text-balance">Other Services</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              {siteConfig.services
-                .filter((s) => s.id !== service.id)
-                .slice(0, 3)
-                .map((otherService) => {
-                  const OtherIcon = otherService.icon
-                    ? (LucideIcons[
-                        otherService.icon as keyof typeof LucideIcons
-                      ] as React.FC<{ className?: string }>)
-                    : null;
+            {/* Estimator Sidebar */}
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <ServiceEstimator
+                serviceId={service.id}
+                serviceName={service.name}
+                basePriceRange={
+                  service.pricing?.type === "starting" && service.pricing.value
+                    ? { min: service.pricing.value, max: service.pricing.value * 3 }
+                    : service.pricing?.type === "quote"
+                    ? { min: 50, max: 300 }
+                    : undefined
+                }
+              />
+            </div>
+          </div>
+        </Section>
 
-                  return (
-                    <Link
-                      key={otherService.id}
-                      href={`/services/${otherService.slug}`}
-                      className="group rounded-xl border bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/20"
-                    >
+        {/* Other Services */}
+        <Section variant="surface" padding="lg">
+          <h2 className="mb-8 text-center text-2xl font-semibold">Other Services</h2>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {siteConfig.services
+              .filter((s) => s.id !== service.id)
+              .slice(0, 3)
+              .map((otherService) => {
+                const OtherIcon = otherService.icon
+                  ? (LucideIcons[
+                      otherService.icon as keyof typeof LucideIcons
+                    ] as React.FC<{ className?: string }>)
+                  : null;
+
+                return (
+                  <Link
+                    key={otherService.id}
+                    href={`/services/${otherService.slug}`}
+                    className="group rounded-xl border bg-card p-5 transition-all duration-300 hover:shadow-md hover:border-primary/20"
+                  >
+                    <div className="flex items-start gap-3">
                       {OtherIcon && (
-                        <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                          <OtherIcon className="h-6 w-6" />
+                        <div className="rounded-lg bg-primary/10 p-2.5 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                          <OtherIcon className="h-5 w-5" />
                         </div>
                       )}
-                      <h3 className="mb-2 text-lg font-semibold">
-                        {otherService.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {otherService.description}
-                      </p>
-                    </Link>
-                  );
-                })}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold">{otherService.name}</h3>
+                        {otherService.pricing && (
+                          <p className="text-sm text-primary">
+                            {otherService.pricing.type === "starting" && `From $${otherService.pricing.value}`}
+                            {otherService.pricing.type === "quote" && "Quote"}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
+                      {otherService.description}
+                    </p>
+                  </Link>
+                );
+              })}
+          </div>
+        </Section>
+
+        {/* CTA */}
+        <Section variant="brandBand" padding="md">
+          <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+            <div>
+              <h2 className="text-xl font-semibold">Ready to Get Started?</h2>
+              <p className="mt-1 opacity-90">
+                Stop by our shop for a free assessment and exact quote.
+              </p>
             </div>
-          </Container>
-        </section>
+            <Button asChild size="lg" variant="secondary" className="flex-shrink-0">
+              <Link href="/contact">Visit Us</Link>
+            </Button>
+          </div>
+        </Section>
       </main>
       <Footer />
     </>
