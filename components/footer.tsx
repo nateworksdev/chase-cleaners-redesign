@@ -7,27 +7,27 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/50 bg-muted/30">
-      <Container className="py-16">
+    <footer className="bg-footer-bg text-footer-fg">
+      <Container className="py-14">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               {siteConfig.meta.siteName}
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-footer-muted">
               {siteConfig.meta.tagline}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-footer-muted transition-colors hover:text-white"
                 >
                   Home
                 </Link>
@@ -35,7 +35,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-footer-muted transition-colors hover:text-white"
                 >
                   Services
                 </Link>
@@ -43,7 +43,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-footer-muted transition-colors hover:text-white"
                 >
                   About
                 </Link>
@@ -51,7 +51,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-footer-muted transition-colors hover:text-white"
                 >
                   Contact
                 </Link>
@@ -61,13 +61,13 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="mb-4 text-lg font-semibold text-white">Contact</h3>
+            <ul className="space-y-2 text-sm text-footer-muted">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 <a
                   href={`tel:${siteConfig.contact.phone.replace(/\D/g, "")}`}
-                  className="transition-colors hover:text-foreground"
+                  className="transition-colors hover:text-white"
                 >
                   {siteConfig.contact.phone}
                 </a>
@@ -76,7 +76,7 @@ export function Footer() {
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="transition-colors hover:text-foreground"
+                  className="transition-colors hover:text-white"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -96,22 +96,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social & Hours */}
+          {/* Hours */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Connect</h3>
+            <h3 className="mb-4 text-lg font-semibold text-white">Hours</h3>
             {siteConfig.contact.hours && (
-              <p className="mb-3 text-sm text-muted-foreground">
+              <p className="mb-4 text-sm text-footer-muted">
                 {siteConfig.contact.hours}
               </p>
             )}
+            <p className="text-sm text-footer-muted">
+              Walk-ins always welcome
+            </p>
             {siteConfig.social && (
-              <div className="flex gap-3">
+              <div className="mt-4 flex gap-3">
                 {siteConfig.social.facebook && (
                   <a
                     href={siteConfig.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-footer-muted transition-colors hover:text-primary"
                   >
                     <Facebook className="h-5 w-5" />
                     <span className="sr-only">Facebook</span>
@@ -122,7 +125,7 @@ export function Footer() {
                     href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-footer-muted transition-colors hover:text-primary"
                   >
                     <Instagram className="h-5 w-5" />
                     <span className="sr-only">Instagram</span>
@@ -133,10 +136,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-10 border-t border-footer-border pt-6 text-center text-sm text-footer-muted">
           <p>
-            &copy; {currentYear} {siteConfig.meta.siteName}. All rights
-            reserved.
+            &copy; {currentYear} {siteConfig.meta.siteName}. All rights reserved.
           </p>
         </div>
       </Container>

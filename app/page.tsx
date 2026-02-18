@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import * as LucideIcons from "lucide-react";
-import { ArrowRight, Star, MapPin, Clock, Scissors, BadgeCheck, Sparkles, ShieldCheck, Zap, Heart } from "lucide-react";
+import { ArrowRight, Star, MapPin, Clock, Scissors, BadgeCheck, Sparkles, ShieldCheck, Zap, Heart, ChevronRight } from "lucide-react";
+import { BgAccent } from "@/components/ui/bg-accent";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { Section } from "@/components/ui/section";
@@ -125,12 +126,20 @@ function WhyChooseUsContent({ data }: { data: ProcessData }) {
   ];
 
   return (
-    <Section variant="surface2" padding="lg">
+    <Section variant="surface2" padding="lg" className="relative">
+      <BgAccent variant="topRight" intensity={0.15} />
       <div className="mb-10 text-center">
         <h2 className="mb-3 text-balance">{data.heading}</h2>
         <p className="mx-auto max-w-xl text-muted-foreground">
           A neighborhood shop with old-fashioned values and modern convenience.
         </p>
+        <Link 
+          href="#services" 
+          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
+        >
+          Learn more
+          <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
       
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -176,7 +185,8 @@ function ServicesGridContent({ data }: { data: ServicesGridData }) {
     : siteConfig.services.filter((s) => s.featured);
 
   return (
-    <>
+    <div id="services" className="relative scroll-mt-20">
+      <BgAccent variant="bottomLeft" intensity={0.12} />
       <div className="mb-10 text-center">
         <h2 className="mb-3 text-balance">{data.heading}</h2>
         {data.subheading && (
@@ -233,7 +243,7 @@ function ServicesGridContent({ data }: { data: ServicesGridData }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -346,8 +356,9 @@ function CTAContent({ data }: { data: CTAData }) {
 // REPLACED: No-pricing quick quote CTA instead of price estimator
 function QuickQuoteSection({ data }: { data: InstantEstimatorData }) {
   return (
-    <Section variant="surface" padding="lg">
-      <div className="mx-auto max-w-3xl text-center">
+    <Section variant="surface" padding="lg" className="relative">
+      <BgAccent variant="center" intensity={0.15} />
+      <div className="relative mx-auto max-w-3xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
           <Sparkles className="h-4 w-4" />
           Quick & Easy
