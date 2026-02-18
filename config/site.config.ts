@@ -96,18 +96,18 @@ export const siteConfig: SiteConfig = {
         {
           type: "image-band",
           data: {
-            image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1600&h=600&fit=crop",
+            image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1600&h=500&fit=crop",
             heading: "Trusted With Your Most Delicate Garments",
             subheading: "Wedding gowns, suits, leather, silk, cashmere—we handle it all with expert care.",
-            height: "md",
+            height: "sm",
             overlay: "gradient",
           },
         },
         {
           type: "instant-estimator",
           data: {
-            heading: "Get a Quick Estimate",
-            subheading: "Select your service and garment to see our price range. No commitment, no pressure.",
+            heading: "Get Your Free Quote",
+            subheading: "Bring your garment in for an exact quote—no obligation, no pressure.",
           },
         },
         {
@@ -149,8 +149,8 @@ export const siteConfig: SiteConfig = {
       ],
     },
     services: {
-      heading: "Services & Pricing",
-      subheading: "Fair, upfront pricing. We'll give you an exact quote when we see your garment—no surprises.",
+      heading: "Our Services",
+      subheading: "From quick repairs to custom tailoring, we handle every garment with care. Bring it in for a free quote.",
     },
     about: {
       heading: "A Neighborhood Shop That Still Does Things Right",
@@ -178,7 +178,6 @@ export const siteConfig: SiteConfig = {
       featured: true,
       icon: "scissors",
       image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&h=600&fit=crop",
-      pricing: { type: "starting", value: 12 },
     },
     {
       id: "dry-cleaning",
@@ -189,7 +188,6 @@ export const siteConfig: SiteConfig = {
       featured: true,
       icon: "sparkles",
       image: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=800&h=600&fit=crop",
-      pricing: { type: "starting", value: 4.5 },
     },
     {
       id: "wedding-gowns",
@@ -200,7 +198,6 @@ export const siteConfig: SiteConfig = {
       featured: true,
       icon: "heart",
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
-      pricing: { type: "starting", value: 150 },
     },
     {
       id: "suits-tuxedos",
@@ -211,7 +208,6 @@ export const siteConfig: SiteConfig = {
       featured: true,
       icon: "briefcase",
       image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&h=600&fit=crop",
-      pricing: { type: "starting", value: 18 },
     },
     {
       id: "leather-suede",
@@ -222,18 +218,16 @@ export const siteConfig: SiteConfig = {
       featured: false,
       icon: "layers",
       image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&h=600&fit=crop",
-      pricing: { type: "starting", value: 45 },
     },
     {
       id: "household",
       name: "Household Items",
       slug: "household",
-      description: "Drapes, linens, comforters, and more. Call for a custom quote.",
+      description: "Drapes, linens, comforters, and more. Bring it in for a custom quote.",
       longDescription: "We clean and care for household textiles including drapes, curtains, bedding, tablecloths, and more. Each item is assessed individually to determine the best cleaning approach.",
       featured: false,
       icon: "home",
       image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop",
-      pricing: { type: "quote" },
     },
   ],
 };

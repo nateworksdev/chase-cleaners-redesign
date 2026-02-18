@@ -55,61 +55,61 @@
 :root {
   /* 
    * Chase Cleaners Theme
-   * Clean, calm, premium — sage green accent for eco/clean vibe
-   * Base: Warm off-white/cream
-   * Accent: Sophisticated sage green
+   * Fresh leaf green — friendly, welcoming, go-green vibe
+   * Base: Warm off-white
+   * Brand: Fresh leaf green (lighter, friendlier)
    */
   
   --radius: 0.625rem;
   
   /* Core palette - warm off-white base */
-  --background: oklch(0.988 0.003 85);
-  --foreground: oklch(0.18 0.01 250);
+  --background: oklch(0.985 0.004 90);
+  --foreground: oklch(0.22 0.015 160);
   
   /* Cards & surfaces */
-  --card: oklch(0.995 0.002 85);
-  --card-foreground: oklch(0.18 0.01 250);
-  --popover: oklch(0.998 0.001 85);
-  --popover-foreground: oklch(0.18 0.01 250);
+  --card: oklch(0.993 0.003 90);
+  --card-foreground: oklch(0.22 0.015 160);
+  --popover: oklch(0.996 0.002 90);
+  --popover-foreground: oklch(0.22 0.015 160);
   
-  /* Primary: Sage green - clean, eco, trustworthy */
-  --primary: oklch(0.52 0.08 155);
-  --primary-foreground: oklch(0.99 0.002 85);
+  /* Primary: Fresh leaf green - friendly, welcoming */
+  --primary: oklch(0.58 0.12 145);
+  --primary-foreground: oklch(0.99 0.005 90);
   
-  /* Secondary: Warm taupe/stone */
-  --secondary: oklch(0.94 0.008 70);
-  --secondary-foreground: oklch(0.30 0.015 70);
+  /* Secondary: Light cream/paper */
+  --secondary: oklch(0.95 0.01 85);
+  --secondary-foreground: oklch(0.28 0.02 160);
   
-  /* Muted: Light sage tint */
-  --muted: oklch(0.95 0.015 155);
-  --muted-foreground: oklch(0.45 0.02 155);
+  /* Muted: Very light mint tint */
+  --muted: oklch(0.96 0.02 145);
+  --muted-foreground: oklch(0.42 0.03 160);
   
-  /* Accent: Soft gold/champagne for highlights */
-  --accent: oklch(0.92 0.04 85);
-  --accent-foreground: oklch(0.25 0.02 85);
+  /* Accent: Soft mint for highlights */
+  --accent: oklch(0.94 0.04 145);
+  --accent-foreground: oklch(0.28 0.04 145);
   
   /* Utility */
   --destructive: oklch(0.55 0.2 25);
-  --border: oklch(0.90 0.008 85);
-  --input: oklch(0.92 0.006 85);
-  --ring: oklch(0.52 0.08 155);
+  --border: oklch(0.91 0.012 145);
+  --input: oklch(0.93 0.008 90);
+  --ring: oklch(0.58 0.12 145);
   
   /* Chart colors */
-  --chart-1: oklch(0.52 0.10 155);
-  --chart-2: oklch(0.60 0.06 85);
-  --chart-3: oklch(0.50 0.08 200);
-  --chart-4: oklch(0.58 0.10 75);
-  --chart-5: oklch(0.62 0.06 155);
+  --chart-1: oklch(0.58 0.12 145);
+  --chart-2: oklch(0.65 0.08 85);
+  --chart-3: oklch(0.52 0.10 180);
+  --chart-4: oklch(0.60 0.10 100);
+  --chart-5: oklch(0.68 0.08 145);
 
   /* 
    * Surface System — alternating section backgrounds
-   * Creates visual rhythm without being distracting
+   * Creates visual rhythm: warm cream → paper → mint tint
    */
-  --surface: oklch(0.975 0.005 85);         /* very light warm cream */
-  --surface-2: oklch(0.96 0.012 70);        /* light sand/paper */
-  --surface-3: oklch(0.965 0.018 155);      /* soft sage tint */
-  --brand-dark: oklch(0.30 0.06 155);       /* deep sage for CTAs */
-  --brand-dark-foreground: oklch(0.98 0.003 85);
+  --surface: oklch(0.978 0.006 90);         /* warm cream */
+  --surface-2: oklch(0.965 0.015 145);      /* soft mint/green tint */
+  --surface-3: oklch(0.955 0.008 85);       /* light paper/sand */
+  --brand-dark: oklch(0.48 0.10 145);       /* leaf green for CTAs (lighter than before) */
+  --brand-dark-foreground: oklch(0.99 0.005 90);
   
   /* Sidebar */
   --sidebar: oklch(0.98 0.005 155);

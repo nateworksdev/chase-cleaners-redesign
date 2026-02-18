@@ -20,9 +20,9 @@ interface ImageBandProps {
 }
 
 const heightStyles = {
-  sm: "min-h-[30vh]",
-  md: "min-h-[45vh]",
-  lg: "min-h-[60vh]",
+  sm: "min-h-[260px] md:min-h-[320px]",
+  md: "min-h-[320px] md:min-h-[400px]",
+  lg: "min-h-[400px] md:min-h-[500px]",
 };
 
 const overlayStyles = {
